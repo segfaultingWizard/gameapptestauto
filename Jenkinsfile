@@ -50,7 +50,7 @@ pipeline
                 {
                     // Push Docker image using Jenkins Docker Pipeline API
                     echo "Push Docker image ${IMAGE_NAME}:latest to Docker Hub..."
-                    app = docker.withRegistry{'https://registry.hub.docker.com', "DOCKERHUB_CREDENTIALS"}
+                    docker.withRegistry{'https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS}"}
                     {
                         app.push("latest")
                     }
