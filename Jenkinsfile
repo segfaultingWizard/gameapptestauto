@@ -28,7 +28,7 @@ pipeline
 
         stage('BUILD-AND-TAG')
         {
-            agent { label 'app-server'}
+            agent { label 'appserver'}
             steps
             {
                 script
@@ -43,7 +43,7 @@ pipeline
 
         stage('PUSH-TO-DOCKERHUB')
         {
-            agent { label 'app-server'}
+            agent { label 'appserver'}
             steps
             {
                 script
@@ -67,7 +67,7 @@ pipeline
 
         stage('DEPLOYMENT')
         {
-            agent { label 'app-server'}
+            agent { label 'appserver'}
             steps
             {
                 echo 'Starting deployment using docker-compose...'
